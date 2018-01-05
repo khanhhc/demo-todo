@@ -1,18 +1,26 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
 
 
-import { AppComponent } from './app.component';
+import {AppComponent} from './app.component';
+import {NotesComponent} from './notes/notes.component';
+import {FormsModule} from '@angular/forms';
+import {NoteService} from './note.service';
+import {NoteComponent} from './note/note.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    NotesComponent,
+    NoteComponent,
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule
   ],
-  providers: [],
+  providers: [NoteService],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}

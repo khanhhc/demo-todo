@@ -1,0 +1,18 @@
+<td>
+  <label>
+    <input class="note-checkbox" type="checkbox" [(ngModel)]="note.done">
+    <input class="note-content" *ngIf="editMode; else viewModeText" type="text" [(ngModel)]="changeContent">
+    <ng-template #viewModeText>{{note.content}}</ng-template>
+  </label>
+</td>
+
+<td *ngIf="editMode; else viewModeControl">
+  <button class="note-save" (click)="saveNote()">Save</button>
+  <button class="note-cancel" (click)="changeEditMode(false)">Cancel</button>
+</td>
+<ng-template #viewModeControl>
+  <td>
+    <button class="note-edit" (click)="changeEditMode(true)">Edit</button>
+    <button class="note-delete" (click)="handleDeleteNote()">Delete</button>
+  </td>
+</ng-template>

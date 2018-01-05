@@ -1,0 +1,8 @@
+<input class="content" type="text" [(ngModel)]="content">
+<button class="note-add" (click)="addNote()">Add</button>
+
+<table>
+  <tr *ngFor="let note of notes; index as i">
+    <app-note class="note" [index]="i" [note]="note" (deleteNote)="onDeleteNote($event)"></app-note>
+  </tr>
+</table>
